@@ -126,58 +126,122 @@ The transcript is grouped by speaker so it is easier to read.
 
 ---
 
-## 2. Dataset 1 Transcription Model Evaluation
+## Datasets Used
 
-```text
-notebooks/dataset1_transcription_model_evaluation.ipynb
-```
+### Dataset 1 — First Hebrew ASR Dataset
+
+**Notebook:**
+`notebooks/dataset1_transcription_model_evaluation.ipynb`
 
 This notebook evaluates transcription models on the first Hebrew dataset.
 
-The dataset is loaded from Arrow shards.  
-Each audio clip is transcribed individually.  
-The model transcript is then compared with the reference transcript.
+**Local path used in Colab:**
+`/content/drive/MyDrive/hebrewasr/dataset`
+
+The dataset was loaded from **3 Arrow shards** stored in Google Drive.
+
+**Full dataset size:**
+
+* 9,360 audio clips
+* 451.4 minutes
+* 7.52 hours
+
+**Subset used for scoring:**
+
+* 610 clips
+* 30.0 minutes
+
+Each audio clip was transcribed individually. The predicted transcript was compared with the reference transcript.
 
 The notebook calculates:
 
-- WER
-- CER
-- average RTF
+* WER
+* CER
+* Average RTF
+
+Before scoring, Hebrew text was normalized by removing nikud, normalizing final Hebrew letters, removing punctuation, and normalizing spaces.
+
+**Important note:**
+All evaluated models were tested on the same fixed subset to ensure a fair comparison.
+
+**Original dataset source:**
+TODO: Add the original public source/link if available. The Google Drive path is only the local storage path.
 
 ---
 
-## 3. Dataset 2 Transcription Model Evaluation
+### Dataset 2 — SASpeech Hebrew Dataset
 
-```text
-notebooks/dataset2_transcription_model_evaluation.ipynb
-```
+**Notebook:**
+`notebooks/dataset2_transcription_model_evaluation.ipynb`
 
 This notebook evaluates transcription models on the SASpeech Hebrew dataset.
 
-SASpeech is cleaner than the first dataset.  
-It is a studio-quality Hebrew dataset with one speaker.
+**Dataset name:**
+`saspeech_gold_standard`
 
-This notebook helps us compare how models behave on easier and cleaner Hebrew audio.
+**Sources:**
+
+* Hugging Face: https://huggingface.co/datasets/upai-inc/saspeech
+* OpenSLR: https://www.openslr.org/134
+
+SASpeech is a cleaner studio-quality Hebrew dataset with one speaker. It is a 30-hour single-speaker Hebrew speech corpus. The gold-standard subset contains around 4 hours of manually corrected transcriptions.
+
+This notebook helps compare how models behave on easier and cleaner Hebrew audio.
+
+**Subset used for scoring:**
+
+* 100 samples
+* 8.1 minutes of audio
+
+The evaluation was done clip-by-clip from WAV files using `metadata.csv`. The same fixed 100 samples were used for every model.
+
+The notebook calculates:
+
+* WER
+* CER
+
+Before scoring, Hebrew text was normalized by removing nikud, normalizing final Hebrew letters, removing punctuation, and normalizing spaces.
 
 ---
 
-## 4. YouTube Hebrew Transcript Evaluation
+### YouTube Hebrew Transcript Dataset
 
-```text
-notebooks/youtube_hebrew_transcription_model_evaluation.ipynb
-```
+**Notebook:**
+`notebooks/youtube_hebrew_transcription_model_evaluation.ipynb`
 
 This notebook evaluates transcription models on a Hebrew YouTube video.
 
 The YouTube video used was:
 
-```text
-Advanced HEBREW Conversation With Subtitles // Learn Hebrew vocabulary about health & environment
-```
+**Advanced HEBREW Conversation With Subtitles // Learn Hebrew vocabulary about health & environment**
 
-The audio was split into chunks of 30 seconds or less.  
-Each model transcribed the same chunks.  
-The output was compared with the YouTube subtitle/reference transcript.
+The audio was split into chunks of 30 seconds or less. Each model transcribed the same chunks. The output was compared with the YouTube subtitle/reference transcript.
+
+**Important note:**
+The same chunks were used for all models to ensure a fair comparison.
+
+**YouTube source link:**
+TODO: Add the exact YouTube video link here.
+
+---
+
+## Evaluation Method
+
+For all datasets, transcription was done clip-by-clip. The model output was compared with the reference transcript using:
+
+* **WER**: Word Error Rate
+* **CER**: Character Error Rate
+* **Average RTF**: Average real-time factor, used to measure transcription speed
+
+Before scoring, Hebrew text was normalized by:
+
+* removing nikud
+* normalizing final Hebrew letters
+* removing punctuation
+* normalizing spaces
+
+Results were saved to Google Drive, and checkpointing was used during long evaluations to avoid losing progress.
+
 
 ---
 
