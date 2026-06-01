@@ -49,13 +49,6 @@ To know if the model is good, we compare its output with a reference transcript.
 
 The reference transcript is the correct or expected text.
 
-Then we calculate:
-
-- WER: Word Error Rate
-- CER: Character Error Rate
-
-Lower WER and CER mean better transcription quality.
-
 ---
 
 ## Project Structure
