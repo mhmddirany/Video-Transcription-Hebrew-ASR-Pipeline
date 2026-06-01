@@ -146,13 +146,7 @@ The dataset was loaded from **3 Arrow shards** stored in Google Drive.
 
 Each audio clip was transcribed individually. The predicted transcript was compared with the reference transcript.
 
-The notebook calculates:
 
-* WER
-* CER
-* Average RTF
-
-Before scoring, Hebrew text was normalized by removing nikud, normalizing final Hebrew letters, removing punctuation, and normalizing spaces.
 
 **Important note:**
 All evaluated models were tested on the same fixed subset to ensure a fair comparison.
@@ -188,12 +182,6 @@ This notebook helps compare how models behave on easier and cleaner Hebrew audio
 
 The evaluation was done clip-by-clip from WAV files using `metadata.csv`. The same fixed 100 samples were used for every model.
 
-The notebook calculates:
-
-* WER
-* CER
-
-Before scoring, Hebrew text was normalized by removing nikud, normalizing final Hebrew letters, removing punctuation, and normalizing spaces.
 
 ---
 
@@ -390,45 +378,10 @@ Normalization makes the comparison fairer.
 
 ---
 
-# RTF: Real-Time Factor
-
-RTF means Real-Time Factor.
-
-It measures how fast the model transcribes audio.
-
-```text
-RTF = transcription time / audio duration
-```
-
-Example:
-
-```text
-RTF = 0.5x
-```
-
-This means the model takes 0.5 seconds to transcribe 1 second of audio.
-
-Lower RTF means faster transcription.
-
-Example:
-
-```text
-0.185x is faster than 0.562x
+62x
 ```
 
 ---
-
-# Experiments and Results
-
----
-
-## Experiment 1: First Hebrew Dataset
-
-### Dataset source
-
-```text
-/content/drive/MyDrive/hebrewasr/dataset
-```
 
 The dataset was loaded from 3 Arrow shards.
 
