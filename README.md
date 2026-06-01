@@ -361,57 +361,6 @@ The word `ללמוד` is missing.
 
 This is a deletion.
 
-#### 3. Insertion
-
-An insertion happens when the model adds an extra word.
-
-Example:
-
-```text
-Reference: אני אוהב עברית
-Prediction: אני מאוד אוהב עברית
-```
-
-The word `מאוד` was added.
-
-This is an insertion.
-
-## WER formula
-
-```text
-WER = (Substitutions + Deletions + Insertions) / Number of words in the reference
-```
-
-A lower WER means the transcript is better.
-
-Example:
-
-```text
-WER = 0.10
-WER = 10%
-```
-
-This means around 10% word error rate.
-
----
-
-## CER: Character Error Rate
-
-CER means Character Error Rate.
-
-It measures mistakes at the character level.
-
-CER is similar to WER, but instead of checking full words, it checks characters.
-
-This is useful for Hebrew because small spelling differences can affect the quality of the transcript.
-
-## CER formula
-
-```text
-CER = (Character substitutions + Character deletions + Character insertions) / Number of characters in the reference
-```
-
-A lower CER means the predicted transcript is closer to the reference transcript.
 
 ---
 
