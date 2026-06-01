@@ -369,15 +369,6 @@ The dataset was loaded from 3 Arrow shards.
 7.52 hours
 ```
 
-### Used for scoring
-
-```text
-610 clips
-30.0 minutes
-```
-
-Only part of the full dataset was used for scoring.
-
 ---
 
 ## How Dataset 1 Transcription Was Done
@@ -386,13 +377,6 @@ The transcription was done clip by clip.
 
 Each audio clip was transcribed individually.
 
-### Audio format
-
-```text
-float32 numpy arrays
-16,000 Hz
-mono
-```
 
 ### Whisper and Ivrit models
 
@@ -400,14 +384,6 @@ Whisper and Ivrit models were run using Hugging Face:
 
 ```python
 pipeline("automatic-speech-recognition")
-```
-
-Main settings:
-
-```text
-chunk_length_s = 30
-stride_length_s = 5
-forced language = he
 ```
 
 ### Caspi and Qwen3-ASR
@@ -714,65 +690,6 @@ A model can have a better WER but a worse CER, or the opposite.
 
 That is why both metrics are useful.
 
-## 4. Real-world transcription is harder
-
-Real-world videos usually include:
-
-- noise,
-- interruptions,
-- overlapping speech,
-- different speakers,
-- informal speech,
-- slang,
-- bad microphones.
-
-So real-world results are usually worse than clean dataset results.
-
----
-
-# How to Use
-
-## 1. Clone the repository
-
-```bash
-git clone https://github.com/mhmddirany/Video-Transcription-Hebrew-ASR-Pipeline.git
-cd Video-Transcription-Hebrew-ASR-Pipeline
-```
-
-## 2. Install requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-In Google Colab, the notebooks install most required libraries automatically.
-
-## 3. Add Hugging Face token
-
-Some models require a Hugging Face token.
-
-In Colab, add the token in:
-
-```text
-Colab Secrets
-```
-
-Use the name:
-
-```text
-HF_TOKEN
-```
-
-Do not write the token directly inside the notebook.
-
-
-
----
-
-# Output Files
-
-The project can generate several output files.
-
 ---
 
 # Notes
@@ -786,25 +703,3 @@ The project can generate several output files.
 - Clean audio usually gives better results than real-world spontaneous audio.
 
 ---
-
-# Final Summary
-
-This project builds and evaluates a Hebrew transcription workflow.
-
-It includes:
-
-- video transcription,
-- audio extraction,
-- speaker diarization,
-- Hebrew transcription,
-- transcript export,
-- model comparison,
-- WER and CER evaluation,
-- and result saving.
-
-The experiments showed that Hebrew-specific models, especially ivrit.ai models, gave the best overall transcription quality.
-
-Caspi also performed well, especially compared with general Whisper models.
-
-The results also showed that dataset type matters a lot.  
-Clean studio audio gives much better results than spontaneous real-world audio.
