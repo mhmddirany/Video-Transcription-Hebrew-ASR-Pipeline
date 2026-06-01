@@ -353,22 +353,6 @@ If these are not normalized, the evaluation may count them as errors even when t
 Normalization makes the comparison fairer.
 
 ---
-
-62x
-```
-
----
-
-The dataset was loaded from 3 Arrow shards.
-
-### Full dataset size
-
-```text
-9,360 clips
-451.4 minutes
-7.52 hours
-```
-
 ---
 
 ## How Dataset 1 Transcription Was Done
