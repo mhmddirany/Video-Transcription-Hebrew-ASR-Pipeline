@@ -200,11 +200,6 @@ The audio was split into chunks of 30 seconds or less. Each model transcribed th
 
 **Important note:**
 The same chunks were used for all models to ensure a fair comparison.
-
-**YouTube source link:**
-TODO: Add the exact YouTube video link here.
-
-
 ---
 
 # Transcription Pipeline
@@ -434,7 +429,6 @@ jiwer
 ```
 
 The text was normalized before scoring.
-
 ### Checkpointing
 
 Results were saved to Google Drive every 50 clips.
@@ -450,7 +444,7 @@ This prevents losing progress if Colab disconnects.
 | Whisper | openai/whisper-large-v3 | 25.11% | 14.45% | 0.562x |
 | Ivrit | ivrit-ai/whisper-large-v3-turbo | 22.93% | 14.15% | 0.185x |
 | Caspi | OzLabs/Caspi-1.7B | 25.02% | 12.21% | 0.419x |
-| Qwen3-ASR | Qwen/Qwen3-ASR-1.7B | ❌ | ❌ | ❌ |
+
 
 ---
 
