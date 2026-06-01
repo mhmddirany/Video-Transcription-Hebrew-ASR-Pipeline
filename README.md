@@ -330,15 +330,6 @@ Both are used to compare the model transcript with the reference transcript.
 
 ---
 
-## WER: Word Error Rate
-
-WER means Word Error Rate.
-
-It measures mistakes at the word level.
-
-WER checks how many word mistakes the model made compared to the reference transcript.
-
-### WER counts three types of errors
 
 #### 1. Substitution
 
@@ -424,23 +415,6 @@ A lower CER means the predicted transcript is closer to the reference transcript
 
 ---
 
-## Difference Between WER and CER
-
-WER checks errors word by word.
-
-CER checks errors character by character.
-
-| Metric | Level | What it measures | Useful for |
-|---|---|---|---|
-| WER | Word level | Wrong, missing, or extra words | Overall transcript quality |
-| CER | Character level | Spelling and character mistakes | Hebrew spelling accuracy |
-
-Both are important.
-
-WER tells us if the model understood the words correctly.  
-CER tells us if the model wrote the words correctly at the spelling level.
-
----
 
 # Hebrew Text Normalization
 
