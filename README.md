@@ -570,63 +570,6 @@ Whisper large-v3 was solid, but it was outperformed by Hebrew-specific models.
 
 SeamlessM4T v2 large had the weakest score in this experiment.
 
----
-
-# Why Whisper Performed Better on SASpeech Than Dataset 1
-
-Whisper performed much better on SASpeech than on the first dataset.
-
-This happened because SASpeech is easier audio.
-
-## SASpeech is easier audio
-
-SASpeech is:
-
-- recorded in a professional studio,
-- single speaker,
-- clean audio,
-- no background noise,
-- no interruptions,
-- consistent microphone,
-- consistent volume,
-- short clips,
-- up to 14 seconds per utterance.
-
-This makes transcription easier.
-
-## Dataset 1 is harder audio
-
-The first dataset is harder because it is crowd-sourced.
-
-It contains:
-
-- many different speakers,
-- different microphones,
-- different environments,
-- spontaneous speech,
-- hesitation,
-- interruptions,
-- slang,
-- informal Hebrew,
-- different accents,
-- different speaking styles.
-
-This makes transcription harder.
-
-## Whisper comparison
-
-| Dataset | Type | Whisper WER |
-|---|---|---:|
-| Dataset 1 / hebrewasr | Crowd, spontaneous | 25.11% |
-| Dataset 2 / SASpeech | Studio, single speaker | 15.12% |
-
-Whisper improved by about 10% WER on SASpeech.
-
-This difference is explained by the audio quality and speech style.
-
-SASpeech is closer to a best-case scenario.
-
-Real-world Hebrew transcription is usually closer to the first dataset because real audio is often noisy, spontaneous, and spoken by different people.
 
 ---
 
@@ -659,8 +602,6 @@ The chunk size was:
 Each model transcribed the same chunks.
 
 Then the transcript of each model was compared with the reference subtitle transcript.
-
-The final score was calculated using WER and CER.
 
 ---
 
@@ -824,80 +765,13 @@ HF_TOKEN
 
 Do not write the token directly inside the notebook.
 
-## 4. Run the video transcription notebook
 
-Open:
-
-```text
-notebooks/video_transcription_pipeline.ipynb
-```
-
-Set the video path:
-
-```python
-MP4_PATH = "/content/drive/MyDrive/hebrew/video.mp4"
-```
-
-Set the output folder:
-
-```python
-OUTPUT_DIR = "/content/drive/MyDrive/output"
-```
-
-Then run the notebook cells from top to bottom.
-
-## 5. Run the evaluation notebooks
-
-Open one of the evaluation notebooks:
-
-```text
-notebooks/dataset1_transcription_model_evaluation.ipynb
-notebooks/dataset2_transcription_model_evaluation.ipynb
-notebooks/youtube_hebrew_transcription_model_evaluation.ipynb
-```
-
-Then:
-
-1. Load the audio or transcript data.
-2. Load the model results.
-3. Load the reference transcript.
-4. Normalize the Hebrew text.
-5. Calculate WER and CER.
-6. Save the results.
 
 ---
 
 # Output Files
 
 The project can generate several output files.
-
-## Transcript outputs
-
-```text
-.json
-.pdf
-```
-
-JSON is useful for structured data.  
-PDF is useful for reading the transcript.
-
-## Evaluation outputs
-
-```text
-.csv
-.xlsx
-```
-
-CSV and Excel files are useful for comparing model results in tables.
-
-Example outputs:
-
-```text
-SUMMARY_WER_CER.csv
-SUMMARY_WER_CER.xlsx
-ALL_MODEL_RESULTS.csv
-ALL_MODEL_RESULTS.xlsx
-```
 
 ---
 
