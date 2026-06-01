@@ -1,95 +1,74 @@
-# Hebrew Video Transcription and Evaluation
+# Project Name
 
-This project evaluates different Automatic Speech Recognition (ASR) models for Hebrew speech transcription.
-
-The goal is to compare transcription quality and speed using WER, CER, and RTF.
-
-The project was tested on three different datasets to compare model performance across different Hebrew speech sources.
+Short description of what the project does.
 
 ---
 
 ## Project Overview
 
-The project includes:
+This project includes:
 
-- Loading Hebrew audio datasets
-- Running ASR models
-- Generating Hebrew transcriptions
-- Comparing model outputs with reference transcripts
-- Calculating evaluation metrics
-- Comparing models based on accuracy and speed
+- Main task 1
+- Main task 2
+- Main task 3
+- Result generation / evaluation
 
 ---
 
-## Datasets
+## Dataset
 
-This project worked on three Hebrew speech/transcription datasets.
+Describe the dataset briefly:
 
-### Dataset 1
-
-Main Hebrew speech dataset used for model evaluation.
-
-- Total clips: 9,360
-- Total duration: 451.4 minutes
-- Total duration in hours: 7.52 hours
-- Evaluation subset: 610 clips
-- Evaluation duration: 30 minutes
-
-### Dataset 2
-
-Hebrew YouTube video dataset used to test transcription on real video/audio.
-
-### Dataset 3
-
-Additional Hebrew audio/text dataset used for extra testing and comparison.
+- Dataset name
+- Number of samples/files if available
+- Languages used
+- Purpose of the dataset
 
 ---
 
-## Models Evaluated
+## Models / Methods Used
 
-The following ASR models were evaluated:
+List only the important models or methods:
 
-- `openai/whisper-large-v3`
-- `ivrit-ai/whisper-large-v3-turbo`
-- `OzLabs/Caspi-1.7B`
-
-`Qwen/Qwen3-ASR-1.7B` was tested but removed from the final comparison because Hebrew is not officially supported.
+- Model 1
+- Model 2
+- Model 3
 
 ---
 
 ## Evaluation Metrics
 
-The models were evaluated using:
+The project was evaluated using:
 
-- WER
-- CER
-- RTF
+- Metric 1
+- Metric 2
+- Metric 3
 
 ---
 
 ## Results
 
-| Model | WER | CER | RTF |
+| Model | Metric 1 | Metric 2 | Metric 3 |
 |---|---:|---:|---:|
-| `ivrit-ai/whisper-large-v3-turbo` | 22.93% | 14.15% | 0.185x |
-| `OzLabs/Caspi-1.7B` | 25.02% | 12.21% | 0.419x |
-| `openai/whisper-large-v3` | 25.11% | 14.45% | 0.562x |
-
----
-
-## Discussion
-
-`ivrit-ai/whisper-large-v3-turbo` achieved the best WER and the fastest inference speed.
-
-`OzLabs/Caspi-1.7B` achieved the best CER.
-
-`openai/whisper-large-v3` gave good results, but it was slower than the other models.
+| Model 1 | value | value | value |
+| Model 2 | value | value | value |
 
 ---
 
 ## Conclusion
 
-The best overall model is:
+Write 3–5 clear sentences about:
 
-```text
-ivrit-ai/whisper-large-v3-turbo
+- Best model/result
+- What worked well
+- What was weaker
+- What the results show
+
+---
+
+## How to Use
+
+```bash
+git clone REPOSITORY_LINK
+cd REPOSITORY_NAME
+pip install -r requirements.txt
