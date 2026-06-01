@@ -204,25 +204,6 @@ The same chunks were used for all models to ensure a fair comparison.
 **YouTube source link:**
 TODO: Add the exact YouTube video link here.
 
----
-
-## Evaluation Method
-
-For all datasets, transcription was done clip-by-clip. The model output was compared with the reference transcript using:
-
-* **WER**: Word Error Rate
-* **CER**: Character Error Rate
-* **Average RTF**: Average real-time factor, used to measure transcription speed
-
-Before scoring, Hebrew text was normalized by:
-
-* removing nikud
-* normalizing final Hebrew letters
-* removing punctuation
-* normalizing spaces
-
-Results were saved to Google Drive, and checkpointing was used during long evaluations to avoid losing progress.
-
 
 ---
 
