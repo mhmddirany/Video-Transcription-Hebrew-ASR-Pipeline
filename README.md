@@ -78,15 +78,13 @@ The project was evaluated using:
 
 ## Conclusion
 
-The best model in the YouTube evaluation was `ivrit_ai_whisper_large_v3`.
+The best results were obtained by Hebrew-specific ASR models, especially the `ivrit.ai` Whisper-based models.
 
-It achieved the lowest WER and CER.
+Fine-tuning large Whisper-based models could improve the results slightly, but the gain may not be very large compared to the training cost, time, GPU energy, and data preparation effort required. Therefore, fine-tuning is useful only if we need maximum accuracy for a production-level Hebrew system.
 
-The `ivrit.ai` models were the strongest models overall in the YouTube evaluation.
+The general Qwen ASR model did not work properly for Hebrew because Hebrew is not supported. However, `Caspi-1.7B`, which is based on the Qwen architecture and adapted for Hebrew, worked successfully and gave competitive results.
 
-`Caspi-1.7B` worked successfully and performed better than the OpenAI Whisper models in WER, but it was still weaker than the `ivrit.ai` models.
-
-The results showed that Hebrew-specific models performed better than general multilingual models.
+Overall, the experiments show that Hebrew-specific models are more reliable than general multilingual models for Hebrew transcription. The best practical direction is to use `ivrit.ai` or `Caspi-1.7B`, and consider fine-tuning only if a small accuracy improvement is worth the extra computational cost.
 
 ---
 
